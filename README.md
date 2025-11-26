@@ -1,66 +1,117 @@
-## Foundry
+## Emad Token — Custom ERC-20 Token (Solidity + Foundry)##
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A full ERC-20 token implementation built from scratch using Solidity and Foundry.
+This project includes a custom token, owner-controlled features, a complete test suite, deployment scripts, and fuzz testing.
 
-Foundry consists of:
+Great as a learning project or starter portfolio repository.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features##
+# Custom ERC-20 Token Implementation#
 
-## Documentation
+Written manually without OpenZeppelin, for learning and clarity.
 
-https://book.getfoundry.sh/
+# Ownership + Access Control#
 
-## Usage
+Owner can mint
 
-### Build
+Owner can burn
 
-```shell
-$ forge build
-```
+Owner can enable trading
 
-### Test
+Owner can transfer ownership
 
-```shell
-$ forge test
-```
+#Trading Lock#
 
-### Format
+Token transfers are blocked until the owner calls enableTrading().
 
-```shell
-$ forge fmt
-```
+# Minting & Burning #
 
-### Gas Snapshots
+Dynamic token supply via:
 
-```shell
-$ forge snapshot
-```
+mint(amount)
 
-### Anvil
+burn(amount)
 
-```shell
-$ anvil
-```
+# Foundry Test Suite
 
-### Deploy
+Includes:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+Unit tests
 
-### Cast
+Revert tests
 
-```shell
-$ cast <subcommand>
-```
+Fuzz tests
 
-### Help
+Gas reports
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+✔ Deployment Script
+
+Automated deployment using Foundry scripts.
+
+## Project Structure
+repo/
+│
+├── src/
+│   └── EmadTkn.sol            # ERC-20 token contract
+│
+├── script/
+│   └── EmadTknScript.sol      # Deployment script
+│
+├── test/
+│   └── EmadTkn.t.sol          # Full Foundry test suite
+│
+└── README.md
+
+# Installation
+
+Requires:
+
+Foundry → https://book.getfoundry.sh/getting-started/installation
+
+Solidity v0.8.x
+
+Install dependencies:
+
+forge install
+
+
+Build project:
+
+forge build
+
+# Running Tests
+
+Run all tests:
+
+forge test -vvv
+
+
+Generate gas report:
+
+forge test --gas-report
+
+# Fuzz Testing
+
+This project includes fuzz tests — automated random input tests that find hidden bugs.
+
+Example fuzz test output:
+
+[PASS] testFuzz_Transfer(uint256) (runs: 257)
+
+
+This confirms the transfer logic works for a wide range of values.
+
+# Deployment
+
+Deploy using Foundry:
+
+forge script script/EmadTknScript.sol \
+  --rpc-url <YOUR_RPC_URL> \
+  --broadcast \
+  --private-key <YOUR_PRIVATE_KEY>
+
+
+# Use environment variables for safety:
+
+source .env
+forge script script/EmadTknScript.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
