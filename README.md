@@ -49,7 +49,7 @@ Gas reports
 Automated deployment using Foundry scripts.
 
 ## Project Structure
-repo/
+```repo/
 │
 ├── src/
 │   └── EmadTkn.sol            # ERC-20 token contract
@@ -60,7 +60,7 @@ repo/
 ├── test/
 │   └── EmadTkn.t.sol          # Full Foundry test suite
 │
-└── README.md
+└── README.md```
 
 # Installation
 
