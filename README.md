@@ -20,7 +20,7 @@ Owner can enable trading
 
 Owner can transfer ownership
 
-#Trading Lock#
+# Trading Lock
 
 Token transfers are blocked until the owner calls enableTrading().
 
