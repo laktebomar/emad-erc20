@@ -44,7 +44,7 @@ Fuzz tests
 
 Gas reports
 
-✔ Deployment Script
+# Deployment Script
 
 Automated deployment using Foundry scripts.
 
