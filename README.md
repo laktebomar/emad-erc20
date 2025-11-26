@@ -1,11 +1,11 @@
-## Emad Token — Custom ERC-20 Token (Solidity + Foundry)##
+## Emad Token — Custom ERC-20 Token (Solidity + Foundry)
 
 A full ERC-20 token implementation built from scratch using Solidity and Foundry.
 This project includes a custom token, owner-controlled features, a complete test suite, deployment scripts, and fuzz testing.
 
 Great as a learning project or starter portfolio repository.
 
-## Features##
+## Features
 # Custom ERC-20 Token Implementation#
 
 Written manually without OpenZeppelin, for learning and clarity.
