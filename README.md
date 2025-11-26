@@ -49,7 +49,8 @@ Gas reports
 Automated deployment using Foundry scripts.
 
 ## Project Structure
-```repo/
+``` bash
+repo/
 │
 ├── src/
 │   └── EmadTkn.sol            # ERC-20 token contract
@@ -60,8 +61,8 @@ Automated deployment using Foundry scripts.
 ├── test/
 │   └── EmadTkn.t.sol          # Full Foundry test suite
 │
-└── README.md```
-
+└── README.md
+```
 # Installation
 
 Requires:
@@ -71,47 +72,48 @@ Foundry → https://book.getfoundry.sh/getting-started/installation
 Solidity v0.8.x
 
 Install dependencies:
-
+``` bash 
 forge install
-
+```
 
 Build project:
-
+``` bash
 forge build
-
+```
 # Running Tests
 
 Run all tests:
-
+``` bash
 forge test -vvv
-
+```
 
 Generate gas report:
-
+``` bash
 forge test --gas-report
-
+```
 # Fuzz Testing
 
 This project includes fuzz tests — automated random input tests that find hidden bugs.
 
 Example fuzz test output:
-
+``` bash
 [PASS] testFuzz_Transfer(uint256) (runs: 257)
-
+```
 
 This confirms the transfer logic works for a wide range of values.
 
 # Deployment
 
 Deploy using Foundry:
-
+``` bash
 forge script script/EmadTknScript.sol \
   --rpc-url <YOUR_RPC_URL> \
   --broadcast \
   --private-key <YOUR_PRIVATE_KEY>
-
+```
 
 # Use environment variables for safety:
-
+``` bash
 source .env
 forge script script/EmadTknScript.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+```
